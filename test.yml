@@ -3,8 +3,8 @@
   gather_facts: False
   become: true
   tasks:
-    - name: stop, disable httpd
+    - name: start, enable httpd
       service:
         name: httpd
-        state: stopped
-        enabled: no
+        state: started
+        enabled: yes
