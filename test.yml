@@ -3,15 +3,8 @@
   gather_facts: False
   become: true
   tasks:
-    - name: install httpd
-      dnf:
-        name: httpd
-        state: latest
-    - name: start httpd
+    - name: stop, disable httpd
       service:
         name: httpd
-        state: started
-    - name: enable httpd
-      service:
-        name: httpd
-        enabled: yes
+        state: stopped
+        enabled: no
