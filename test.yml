@@ -1,10 +1,10 @@
 ---
 - hosts: all
-  gather_facts: False
-  become: true
+  gather_facts: yes
+  become: yes
   tasks:
     - name: start, enable httpd
       service:
         name: httpd
-        state: started
-        enabled: yes
+        state: stopped
+        enabled: no
