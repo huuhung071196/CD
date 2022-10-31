@@ -1,2 +1,17 @@
 ---
-he lo he lo
+- hosts: all
+  gather_facts: False
+  become: true
+  tasks:
+    - name: install httpd
+      dnf:
+        name: httpd
+        state: latest
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+    - name: enable httpd
+      service:
+        name: httpd
+        enabled: yes
